@@ -1,0 +1,28 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+buildDir = 'out'
+
+group 'com.nuc.zp'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    test {
+        useJUnitPlatform()
+    }
+}
