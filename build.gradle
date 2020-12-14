@@ -13,14 +13,33 @@ sourceCompatibility = 1.8
 
 repositories {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url "http://maven.dcm4che.org/" }
+    maven { url "https://github.com/nroduit/mvn-repo/tree/master/" }
+    mavenCentral()
 }
 
 dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.openjdk.jol:jol-core:0.9'
+    implementation 'io.netty:netty-all:4.1.33.Final'
+
+    implementation 'org.dcm4che:dcm4che-core:5.22.6'
+    implementation 'org.dcm4che:dcm4che-imageio:5.22.6'
+    implementation 'org.dcm4che:dcm4che-imageio-opencv:5.22.6'
+
+//    compile group: 'org.dcm4che.tool', name: 'dcm4che-tool-dcm2jpg', version: '5.22.6'
+
+    compile 'org.dcm4che.tool:dcm4che-tool-dcm2jpg:dcm4chee-arc-light-5.10.1'
+
+    // https://mvnrepository.com/artifact/javax.vecmath/vecmath
+    compile group: 'javax.vecmath', name: 'vecmath', version: '1.5.2'
 
     test {
         useJUnitPlatform()
