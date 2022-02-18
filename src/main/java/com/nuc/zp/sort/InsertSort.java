@@ -6,7 +6,6 @@ package com.nuc.zp.sort;
  */
 public class InsertSort {
 
-
     public void sort(int[] arr) {
         int i = 1;
         while (i < arr.length) {
@@ -30,7 +29,6 @@ public class InsertSort {
         arr[j] = arr[i] - arr[j];
         arr[i] = arr[i] - arr[j];
     }
-
 
     public static void main(String[] args) {
         InsertSort insertSort = new InsertSort();
