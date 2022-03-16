@@ -1,5 +1,7 @@
 package com.nuc.zp.sort;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  * 快速排序
  */
@@ -59,7 +61,10 @@ public class QuickSort {
 
     public static void main(String[] args) {
         QuickSort quickSort = new QuickSort();
-        int[] arr = new int[]{3, 4, 1, 2, 1, 8, 6, 5};
+        int[] arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = ThreadLocalRandom.current().nextInt(10);
+        }
         quickSort.sort(arr);
         quickSort.print(arr);
     }
